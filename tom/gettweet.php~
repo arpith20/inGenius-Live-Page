@@ -1,0 +1,25 @@
+<?php
+session_start();
+require_once("twitteroauth/twitteroauth.php"); //Path to twitteroauth library
+ 
+$twitteruser = "caughtoffside";
+$notweets = 30;
+$accesstoken = "358530129-S5FDJ3KcVUTbWKDCUdbCJrzTBe3olaJTfAUAT217";
+$accesstokensecret = "lwwxzweG5Ezimdtx9dPs9NuZnsWGZEs2WM202Pcg";
+$consumerkey = "WzSJMMK5AwOt11jsmLqOA";
+$consumersecret = "TZcH9VoCSeXuCHpdVwOzzpvnhNCyn1AfE8UYxboQdbY";
+
+function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
+  $connection = new TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
+  return $connection;
+}
+ 
+$connection = getConnectionWithAccessToken($consumerkey, $consumersecret, $accesstoken, $accesstokensecret);
+ 
+$tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=".$twitteruser."&count=".$notweets);
+ 
+echo json_encode($tweets);
+//$cont=json_encode($tweets);
+//echo $cont;
+//echo $tweets->statuses[0]->text;
+?>

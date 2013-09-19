@@ -1,0 +1,50 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js">
+	    </script>
+	<script type="text/javascript">
+		$(document).ready(function(){   
+	      	$("#myVideo").bind('ended', function(){
+			location.href="count.html";   
+	       		}); 
+	      	});
+	</script>
+	<script type="text/javascript">
+		function setCookie(){
+			var c_name="endtime";
+			var time=new Date();
+			time.setDate(time.getDate()+1);
+			var value=time.valueOf();
+			var exdays=24;
+			var exdate=new Date();
+			exdate.setDate(exdate.getDate() + exdays);
+			var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+			document.cookie=c_name + "=" + c_value;
+			alert("set");
+		}
+	</script>
+	<script type="text/javascript">
+		function playVideo(){
+			setCookie();
+			var video = document.getElementById('myVideo');
+	    		video.play();
+		}
+	</script>
+</head>
+<body style="background-color:black;">
+	<video id="myVideo" width="100%" height=100% onClick="playVideo();" poster="one.png">
+	     	<source src="two.webm" type="video/webm" />
+	</video>
+</body>
+</head>
+
+<!--<html>
+<body>
+<video width="100%" height="100%" controls autoplay poster="1.png">
+<source src="1.mp4" type="video/mp4" />
+</video>
+</body>
+</html>
+-->
+
+
