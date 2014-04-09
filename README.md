@@ -4,7 +4,7 @@ This is a countdown timer made for __inGenius 2013 hackathon__ conducted by the 
 
 Notes:
 ------
-* `2_video.html` sets the end time (T + 24 hrs) as a cookie. Modify it as per your wish.
+* `2_video.html` sets the end time (T + 24 hrs) as a cookie. Modify this file as per your wish.
 * Background images are stored in `./assets/img/backgrounds`
 * Specify the images to be displayed (and in what order/duration/fade time) in `./assets/js/scripts.js` file
 
