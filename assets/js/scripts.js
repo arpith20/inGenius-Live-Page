@@ -5,8 +5,10 @@ jQuery(document).ready(function() {
         Background slideshow
     */
     $('.coming-soon').backstretch([
-      "assets/img/backgrounds/1.jpg"
-    , "assets/img/backgrounds/2.jpg"
+      "assets/img/backgrounds/0_copy.jpg"
+    , "assets/img/backgrounds/3_copy.jpg"
+    , "assets/img/backgrounds/4_copy.jpg"
+    , "assets/img/backgrounds/5_copy.jpg"
     ], {duration: 3000, fade: 750});
 
     /*
